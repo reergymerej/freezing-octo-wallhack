@@ -1,0 +1,13 @@
+extends item-layout
+
+block item-content
+	h1 items index
+	div
+		ul
+		each item, i in items
+			li 
+				div.btn-group  
+					button.btn.btn-default.btn-xs
+						a(href='/items/#{item._id}', role='button') view
+					a.btn.btn-danger.btn-xs.delete(id='#{item._id}') delete
+				span #{item.name}
